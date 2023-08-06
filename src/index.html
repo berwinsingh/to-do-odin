@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/to-do-list.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../dist/output.css">
     <title>To Do List</title>
 </head>
 <body>
-    
+    <div class=" w-40 float-left justify-between" id="header">
+        <div class="heading">
+            <h1 class="text-4xl p-4 select-none cursor-pointer text-yellow-400">Tasky!!!</h1>
+        </div>
+        <div class="options flex-col w-full justify-evenly">
+            <div id="all-tasks" class="flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-yellow-300 active:bg-yellow-400">
+                <ion-icon name="checkbox-outline"></ion-icon>
+                <p>All Tasks</p>
+            </div>
+            <div id="high-priority" class="mt-1 pl-4 flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-red-500 active:bg-red-600">
+                <p>!!! High Priority</p>
+            </div>
+            <div id="med-priority" class="mt-1 pl-4 flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-orange-400 active:bg-orange-600">
+                <p>!! Med Priority</p>
+            </div>
+            <div id="low-priority" class="mt-1 pl-4 flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-green-500 active:bg-green-600">
+                <p>! Low Priority</p>
+            </div>
+            <div id="notes" class="flex items-center gap-1 mt-2 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-yellow-300 active:bg-yellow-400">
+                <ion-icon name="pencil-outline"></ion-icon>
+                <p>Notes</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="new-btn" class="bg-yellow-400 fixed px-3 py-3 pb-1 rounded-full drop-shadow-2xl">
+        <ion-icon name="add-outline" class="text-3xl text-white"></ion-icon>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../JS Content/main.js"></script>
 </body>
 </html>

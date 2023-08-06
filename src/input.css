@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+    --heading-font: 'Staatliches', cursive;
+    --para-font: 'Poppins', sans-serif;
+}
+
+h1{
+    font-family: var(--heading-font);
+    bottom: 46rem;
+    right: 2.5rem;
+}
+
+p{
+    font-family: var(--para-font);
+    font-size: 1rem;
+}
+
+#header{
+    height: 100vh;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.23));
+}
+
+#all-tasks,#notes{
+    transition: 10ms ease-in;
+}
+
+#new-btn{
+    left: 95%;
+    top: 92%;
+}
