@@ -7,10 +7,8 @@
     --para-font: 'Poppins', sans-serif;
 }
 
-h1{
+h1,h2,h3{
     font-family: var(--heading-font);
-    bottom: 46rem;
-    right: 2.5rem;
 }
 
 p{
@@ -35,4 +33,21 @@ p{
 #new-btn{
     left: 95%;
     top: 92%;
+}
+
+.display{
+    display: none;
+}
+
+.page-heading{
+    bottom: 38%;
+    right: 45%;
+}
+
+@media (min-width:1600px){
+
+    .page-heading{
+        bottom: 41%;
+        right: 46%;
+    }
 }

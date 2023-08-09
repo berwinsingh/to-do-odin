@@ -11,12 +11,12 @@
     <title>To Do List</title>
 </head>
 <body>
-    <div class=" w-40 float-left justify-between" id="header">
+    <div class=" w-40 float-left justify-between z-40 fixed" id="header">
         <div class="heading">
             <h1 class="text-4xl p-4 select-none cursor-pointer text-yellow-400">Tasky!!!</h1>
         </div>
-        <div class="options flex-col w-full justify-evenly">
-            <div id="all-tasks" class="flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-yellow-300 active:bg-yellow-400">
+        <div class="options flex flex-col w-full justify-evenly">
+            <div id="all-tasks" class="flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-yellow-300 bg-yellow-400">
                 <ion-icon name="checkbox-outline"></ion-icon>
                 <p>All Tasks</p>
             </div>
@@ -36,12 +36,30 @@
         </div>
     </div>
 
-    <div id="new-btn" class="bg-yellow-400 fixed px-3 py-3 pb-1 rounded-full drop-shadow-2xl">
+    <div id="new-btn" class="bg-yellow-400 cursor-pointer fixed px-3 py-3 pb-1 rounded-full drop-shadow-yellow z-50 active:scale-.99 hover:bg-yellow-500">
         <ion-icon name="add-outline" class="text-3xl text-white"></ion-icon>
     </div>
 
+    <h2 class="flex items-center text-3xl pt-4 pl-44">All Tasks <ion-icon name="checkbox-outline"></ion-icon></h2>
+
+    <div id="main-content-container" class="h-full ml-48 mr-5 my-5">
+        <div id="tasks-list" class="w-full ">
+            <div class="task flex bg-white drop-shadow-xl p-3 rounded-md">
+                <h3 class="text-xl">Task Name</h3>
+                <div id="task-priority" class="bg-white drop-shadow-md">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <template id="new-task">
+
+    </template>
+
+    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../JS Content/main.js"></script>
+    <script src="../JavaScript/main.js"></script>
 </body>
 </html>
