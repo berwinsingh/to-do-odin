@@ -44,17 +44,22 @@
 
     <div id="main-content-container" class="h-full ml-48 mr-5 my-5">
         <div id="tasks-list" class="w-full ">
-            <div class="task flex bg-white drop-shadow-xl p-3 rounded-md">
-                <h3 class="text-xl">Task Name</h3>
-                <div id="task-priority" class="bg-white drop-shadow-md">
-
-                </div>
-            </div>
+            <!-- Tasks are added through JavaScript from #new-task template-->
         </div>
     </div>
     
     <template id="new-task">
-
+        <div class="task flex bg-white drop-shadow-xl p-3 items-center justify-between rounded-md">
+            <div class = "completed flex items-center gap-1">
+                <ion-icon name="ellipse-outline" class="text-xl"></ion-icon>
+                <h3 class="text-2xl">Task Name</h3>
+            </div>
+    
+            <div class="task-details flex self-center gap-5">
+                <p class="text-white bg-red-600 rounded-lg p-2 drop-shadow-md priority-type">High</p>
+                <input type="date" name="due-date" class="due-date rounded-md drop-shadow-md p-2 focus:outline-none">
+            </div>
+        </div>
     </template>
 
     
