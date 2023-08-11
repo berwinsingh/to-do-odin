@@ -9,7 +9,16 @@ module.exports = {
       },
       scale:{
         '.99': '.99',
-      }
+      },
+      width:{
+        '100':'35rem',
+      },
+      height:{
+        '100':'40rem',
+      },
+      backgroundColor:{
+        'black-low':'#00000033',
+      },
     },
   },
   plugins: [],

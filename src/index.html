@@ -47,6 +47,23 @@
             <!-- Tasks are added through JavaScript from #new-task template-->
         </div>
     </div>
+
+    <!-- A popup that comes up when the Add btn is clicked else it will be hidden by default -->
+    <div id="add-new-task" class="fixed flex flex-col gap-3 bg-white drop-shadow-xl w-100 h-60 rounded-xl px-10 py-5">
+        <h2 class="text-3xl self-center text-yellow-400">Add New Task</h2>
+        <ion-icon name="close-outline" class="text-black"></ion-icon>
+        <input type="text" name="task-details" id="task-name" class="border border-black rounded-md py-1 px-2 focus:outline-none select-none" placeholder="What would you like to achieve?">
+        <div id="other-details" class="flex gap-4 justify-between">
+            <div id="choose-priority" class="flex gap-1">
+                <p class="text-white bg-green-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Low</p>
+                <!-- These other two will be visible when we click on the low button -->
+                <p class="text-white bg-orange-600 rounded-lg p-2 drop-shadow-md priority-type select-none display cursor-pointer">Medium</p>
+                <p class="text-white bg-red-600 rounded-lg p-2 drop-shadow-md priority-type select-none display cursor-pointer">High</p>
+            </div>
+            <input type="date" name="due-date" class="due-date cursor-pointer rounded-md drop-shadow-md p-2 focus:outline-none">
+        </div>
+        <button type="button" id="create-task-btn" class="p-2 bg-yellow-400 mx-44 rounded-lg text-white font-bold drop-shadow-yellow active:scale-.99">Create Task</button>
+    </div>
     
     <template id="new-task">
         <div class="task flex bg-white drop-shadow-xl p-3 items-center justify-between rounded-md">

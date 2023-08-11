@@ -44,10 +44,21 @@ p{
     right: 45%;
 }
 
+#add-new-task{
+    left: 35%;
+    top:35%;
+    z-index: 60;
+}
+
 @media (min-width:1600px){
 
     .page-heading{
         bottom: 41%;
         right: 46%;
+    }
+
+    #add-new-task{
+        left: 40%;
+        top: 40%;
     }
 }
