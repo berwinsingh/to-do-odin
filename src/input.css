@@ -50,6 +50,12 @@ p{
     z-index: 60;
 }
 
+#close-btn{
+    left: 90%;
+    bottom: 85%;
+    cursor: pointer;
+}
+
 @media (min-width:1600px){
 
     .page-heading{
