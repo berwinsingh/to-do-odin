@@ -91,7 +91,7 @@ function createTask(){
                 priorityTypeElement.style.backgroundColor = '#ea580c';
             }
             else if(priorityTypeElement.textContent==='Low'){
-                priorityTypeElement.style.backgroundColor = '#65a30d';
+                priorityTypeElement.style.backgroundColor = '#16a34a';
             }
         }
         if (dueDateElement) {
@@ -104,6 +104,9 @@ function createTask(){
         //Resetting the input fields value i.e., Task Name and Task Date
         taskName.value="";
         taskDate.value="";
+        lowPriority.classList.remove('display');
+        mediumPriority.classList.remove('display');
+        highPriority.classList.remove('display');
     }
 };
 
