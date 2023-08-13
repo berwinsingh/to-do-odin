@@ -6,7 +6,7 @@ const taskDate = document.getElementById("task-date");
 const closePopup = document.getElementById("close-btn");
 const mainHeading = document.querySelector(".main-new-heading");
 
-const taskList = document.getElementById("task-list");
+const taskList = document.getElementById("tasks-list");
 
 //The various priority setup's
 const choosePriority = document.getElementById('choose-priority');
@@ -73,9 +73,10 @@ function createTask(){
 
         //Need to check if this works
         const newTaskCreate = newTaskTemplate.content.cloneNode(true);
-        let whatToDoElement = newTaskCreate.querySelector('.task-name');
-        let priorityTypeElement = newTaskCreate.querySelector('.priority-type');
-        let dueDateElement = newTaskCreate.querySelector('.due-date');
+        let theTask = newTaskCreate.querySelector(".task");
+        let whatToDoElement = theTask.querySelector('.task-name');
+        let priorityTypeElement = theTask.querySelector('.priority-type');
+        let dueDateElement = theTask.querySelector('.due-date');
 
         if (whatToDoElement) {
             whatToDoElement.textContent = newTask.task;
@@ -87,9 +88,10 @@ function createTask(){
             dueDateElement.value = newTask.date;
         }
 
-        console.log(newTaskCreate);
-        taskList.appendChild(newTaskCreate);
+        taskList.appendChild(theTask);
+        newTaskPopup.classList.add('display');
 
+        //Resetting the input fields value i.e., Task Name and Task Date
         taskName.value="";
         taskDate.value="";
     }
