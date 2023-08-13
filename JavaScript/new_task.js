@@ -71,7 +71,6 @@ function createTask(){
     else{
         const newTask = taskDetails(taskName.value,taskDate.value,currentPriority.textContent); //Storing all the task details
 
-        //Need to check if this works
         const newTaskCreate = newTaskTemplate.content.cloneNode(true);
         let theTask = newTaskCreate.querySelector(".task");
         let whatToDoElement = theTask.querySelector('.task-name');
@@ -83,6 +82,17 @@ function createTask(){
         }
         if (priorityTypeElement) {
             priorityTypeElement.textContent = newTask.priority;
+            
+            //Condition that add the appropriate background color based on the priority selected
+            if(priorityTypeElement.textContent==='High'){
+                priorityTypeElement.style.backgroundColor = '#dc2626';
+            }
+            else if(priorityTypeElement.textContent==='Medium'){
+                priorityTypeElement.style.backgroundColor = '#ea580c';
+            }
+            else if(priorityTypeElement.textContent==='Low'){
+                priorityTypeElement.style.backgroundColor = '#65a30d';
+            }
         }
         if (dueDateElement) {
             dueDateElement.value = newTask.date;
@@ -97,7 +107,6 @@ function createTask(){
     }
 };
 
-
 export{
     createTaskBtn,
     addNewTask,
@@ -106,5 +115,6 @@ export{
     onClickPopupView,
     popupClose,
     createTask,
-    prioritySelect
+    prioritySelect,
+    taskList,
 }

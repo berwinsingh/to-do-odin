@@ -61,21 +61,6 @@ p{
     font-weight: 500;
 }
 
-/* #choose-priority{
-    appearance: none;
-    background-color: green;
-    border-radius: 999px;
-    padding: 10px;
-    color: white;
-    font-weight: 700;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-}
-
-#choose-priority:focus{
-    outline: none;
-} */
-
 option {
     padding: 10px;
     background-color: black;
