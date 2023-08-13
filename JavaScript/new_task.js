@@ -1,5 +1,3 @@
-
-
 const addNewTask = document.getElementById("new-btn"); //Plus icon that will reveal the popup when clicked
 const newTaskPopup = document.getElementById("add-new-task"); //This will be shown or hidden on the click of the add btn
 const taskName = document.getElementById("task-name");
@@ -8,13 +6,15 @@ const taskDate = document.getElementById("task-date");
 const closePopup = document.getElementById("close-btn");
 const mainHeading = document.querySelector(".main-new-heading");
 
+const taskList = document.getElementById("task-list");
+
 //The various priority setup's
 const choosePriority = document.getElementById('choose-priority');
 const lowPriority = document.getElementById("low")
 const mediumPriority = document.getElementById("medium");
 const highPriority = document.getElementById("high");
 
-let currentPriority= lowPriority;
+let currentPriority= lowPriority; //Holds the priority level based on the users choice can be changed dynamically
 
 //Factory function to store new tasks that have been created
 const taskDetails = (task, date="", priority=lowPriority.textContent)=>{
@@ -49,10 +49,13 @@ const prioritySelect = (event)=>{
             mediumPriority.classList.toggle('display');
             currentPriority=highPriority;
             break;
+
         default:
             break;
     }
 }
+
+const newTaskTemplate = document.getElementById("new-task");
 
 function createTask(){
     if(taskName.value===""){
@@ -66,8 +69,29 @@ function createTask(){
     }
 
     else{
-        const newTask = taskDetails(taskName.value,taskDate.value,currentPriority.textContent);
-        console.log(newTask);
+        const newTask = taskDetails(taskName.value,taskDate.value,currentPriority.textContent); //Storing all the task details
+
+        //Need to check if this works
+        const newTaskCreate = newTaskTemplate.content.cloneNode(true);
+        let whatToDoElement = newTaskCreate.querySelector('.task-name');
+        let priorityTypeElement = newTaskCreate.querySelector('.priority-type');
+        let dueDateElement = newTaskCreate.querySelector('.due-date');
+
+        if (whatToDoElement) {
+            whatToDoElement.textContent = newTask.task;
+        }
+        if (priorityTypeElement) {
+            priorityTypeElement.textContent = newTask.priority;
+        }
+        if (dueDateElement) {
+            dueDateElement.value = newTask.date;
+        }
+
+        console.log(newTaskCreate);
+        taskList.appendChild(newTaskCreate);
+
+        taskName.value="";
+        taskDate.value="";
     }
 };
 
