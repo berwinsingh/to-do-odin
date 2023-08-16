@@ -11,7 +11,7 @@ h1,h2,h3{
     font-family: var(--heading-font);
 }
 
-p{
+p,label{
     font-family: var(--para-font);
     font-size: 1rem;
 }
@@ -48,6 +48,12 @@ p{
     left: 35%;
     top:35%;
     z-index: 60;
+}
+
+#edit-task{
+    left: 35%;
+    top: 20%;
+    border-radius: 15px;
 }
 
 #close-btn{

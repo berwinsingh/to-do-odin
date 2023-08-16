@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/to-do-list.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/Favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Staatliches&display=swap" rel="stylesheet">
@@ -53,15 +53,15 @@
                 </div>
         
                 <div class="task-details flex self-center gap-5 items-center">
-                    <p class="text-white rounded-lg p-2 drop-shadow-md priority-type bg-red-600 select-none">High</p>
-                    <input type="date" name="due-date" class="due-date rounded-md drop-shadow-md p-2 focus:outline-none">
+                    <p class="text-white rounded-lg p-2 drop-shadow-md priority-type select-none bg-red-600">High</p>
+                    <input type="date" name="due-date" class="due-date rounded-md bg-white drop-shadow-md p-2 focus:outline-none" disabled>
                     <ion-icon name="trash-outline" class="text-2xl cursor-pointer text-red-700 delete-task"></ion-icon>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- A popup that comes up when the Add btn is clicked else it will be hidden by default -->
+    <!-- This popup comes up when the add btn is clicked else it will be hidden by default -->
     <div id="add-new-task" class="fixed flex display flex-col gap-3 bg-white drop-shadow-xl w-100 h-60 rounded-xl px-10 py-5">
         <span class="material-icons absolute" id="close-btn">close</span>
         <h2 class="text-3xl self-center text-yellow-400 select-none main-new-heading">Add New Task</h2>
@@ -76,6 +76,25 @@
         </div>
         <button type="button" id="create-task-btn" class="p-2 mt-2 bg-yellow-400 mx-44 rounded-lg text-white font-bold drop-shadow-yellow active:scale-.99 hover:bg-yellow-500">Create Task</button>
     </div>
+
+    <!-- This popup comes into play whenever we would like to edit our task details -->
+    <div id="edit-task" class="fixed z-30 bg-white drop-shadow-lg w-100 h-100 p-8 flex flex-col">
+        <h2 class="text-4xl self-center select-none main-edit-heading text-yellow-400">Add New Task</h2>
+        <label for="edit-task-name" class="font-semibold mt-3">Task Name</label>
+        <input type="text" name="edit-task" id="edit-task-name" class="mt-1 border border-black rounded-md py-1 px-2 focus:outline-none">
+        <!-- Priority will be dynamically selected based on the element selected to edit -->
+        <div class="other-details flex justify-between mt-4">
+            <div id="choose-priority" class="flex gap-1">
+                <p id="low" class="text-white bg-green-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Low</p>
+                <p id="medium" class="text-white bg-orange-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Medium</p>
+                <p id="high" class="text-white bg-red-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">High</p>
+            </div>
+            <input type="date" name="due-date" id="edit-task-date" class="cursor-pointer rounded-md drop-shadow-md p-2 focus:outline-none">
+        </div>
+        <label for="add-description" class="mt-4 font-semibold">Description</label>
+        <textarea name="add-description" id="add-description" cols="30" rows="10" class="border border-black p-2 focus:outline-none rounded-md"></textarea>
+        <button type="button" id="edit-task-btn" class="p-2 mt-4 bg-yellow-400 mx-44 rounded-lg text-white font-bold drop-shadow-yellow active:scale-.99 hover:bg-yellow-500">Edit Task</button>
+    </div>
     
     <template id="new-task">
         <div class="task flex bg-white drop-shadow-xl p-3 items-center justify-between rounded-md mt-2">
@@ -84,14 +103,17 @@
                 <h3 class="text-2xl task-name select-none">Task Name</h3>
             </div>
     
-            <div class="task-details flex self-center gap-5">
+            <div class="task-details flex self-center gap-5 items-center">
                 <p class="text-white rounded-lg p-2 drop-shadow-md priority-type select-none">High</p>
-                <input type="date" name="due-date" class="due-date rounded-md drop-shadow-md p-2 focus:outline-none">
+                <input type="date" name="due-date" class="due-date rounded-md bg-white drop-shadow-md p-2 focus:outline-none" disabled>
                 <ion-icon name="trash-outline" class="text-2xl cursor-pointer text-red-700 delete-task"></ion-icon>
             </div>
         </div>
     </template>
 
+    <template id="new-note">
+
+    </template>
     
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

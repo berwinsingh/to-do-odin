@@ -14,7 +14,7 @@ module.exports = {
         '100':'35rem',
       },
       height:{
-        '100':'40rem',
+        '100':'35rem',
       },
       backgroundColor:{
         'black-low':'#00000033',

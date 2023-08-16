@@ -10,6 +10,8 @@ import {
   taskList
 } from "./new_task.js";
 
+
+//Creating new task functionality
 addNewTask.addEventListener("click", onClickPopupView);
 closePopup.addEventListener("click", popupClose);
 createTaskBtn.addEventListener("click", createTask);
@@ -31,3 +33,5 @@ taskList.addEventListener("click",(event)=>{
     event.target.closest('.task').remove();
   }
 });
+
+//Editing existing task functionality
