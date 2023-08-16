@@ -7,12 +7,16 @@
     --para-font: 'Poppins', sans-serif;
 }
 
+body{
+    font-family: var(--para-font);
+}
+
 h1,h2,h3{
     font-family: var(--heading-font);
 }
 
 p,label{
-    font-family: var(--para-font);
+    /* font-family: var(--para-font); */
     font-size: 1rem;
 }
 
@@ -60,6 +64,13 @@ p,label{
     left: 90%;
     bottom: 85%;
     cursor: pointer;
+    user-select: none;
+}
+
+#edit-close-btn{
+    left: 90%;
+    cursor: pointer;
+    user-select: none;
 }
 
 .default-value{

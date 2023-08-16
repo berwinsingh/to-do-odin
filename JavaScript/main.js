@@ -10,6 +10,8 @@ import {
   taskList
 } from "./new_task.js";
 
+import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup } from "./edit-task.js";
+
 
 //Creating new task functionality
 addNewTask.addEventListener("click", onClickPopupView);
@@ -29,9 +31,13 @@ taskList.addEventListener("click",(event)=>{
   }
 
   if(event.target.classList.contains('delete-task')){
-    // console.log(event.target.closest('.task'));
     event.target.closest('.task').remove();
+  }
+
+  if(event.target.classList.contains('task')){
+    editTaskPopup.classList.remove('display');
   }
 });
 
 //Editing existing task functionality
+editPopupCloseBtn.addEventListener('click',closeEditPopup);

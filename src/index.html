@@ -46,7 +46,7 @@
     <div id="main-content-container" class="h-full ml-48 mr-5 my-5">
         <div id="tasks-list" class="w-full">
             <!-- Tasks are added through JavaScript from #new-task template-->
-            <div class="task flex bg-white drop-shadow-xl p-3 items-center justify-between rounded-md mt-2">
+            <div class="task cursor-pointer flex bg-white drop-shadow-xl p-3 items-center justify-between rounded-md mt-2">
                 <div class = "completed flex items-center gap-1">
                     <ion-icon name="ellipse-outline" class="text-2xl task-status cursor-pointer completed"></ion-icon>
                     <h3 class="text-2xl task-name select-none">Task Name</h3>
@@ -79,12 +79,13 @@
 
     <!-- This popup comes into play whenever we would like to edit our task details -->
     <div id="edit-task" class="fixed z-30 bg-white drop-shadow-lg w-100 h-100 p-8 flex flex-col">
+        <span class="material-icons absolute" id="edit-close-btn">close</span>
         <h2 class="text-4xl self-center select-none main-edit-heading text-yellow-400">Add New Task</h2>
         <label for="edit-task-name" class="font-semibold mt-3">Task Name</label>
         <input type="text" name="edit-task" id="edit-task-name" class="mt-1 border border-black rounded-md py-1 px-2 focus:outline-none">
         <!-- Priority will be dynamically selected based on the element selected to edit -->
         <div class="other-details flex justify-between mt-4">
-            <div id="choose-priority" class="flex gap-1">
+            <div id="edit-priority" class="flex gap-1">
                 <p id="low" class="text-white bg-green-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Low</p>
                 <p id="medium" class="text-white bg-orange-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Medium</p>
                 <p id="high" class="text-white bg-red-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">High</p>
@@ -92,12 +93,12 @@
             <input type="date" name="due-date" id="edit-task-date" class="cursor-pointer rounded-md drop-shadow-md p-2 focus:outline-none">
         </div>
         <label for="add-description" class="mt-4 font-semibold">Description</label>
-        <textarea name="add-description" id="add-description" cols="30" rows="10" class="border border-black p-2 focus:outline-none rounded-md"></textarea>
+        <textarea name="add-description" id="add-description" cols="30" rows="10" class="border border-black p-2 focus:outline-none rounded-md" placeholder="Add Project Description"></textarea>
         <button type="button" id="edit-task-btn" class="p-2 mt-4 bg-yellow-400 mx-44 rounded-lg text-white font-bold drop-shadow-yellow active:scale-.99 hover:bg-yellow-500">Edit Task</button>
     </div>
     
     <template id="new-task">
-        <div class="task flex bg-white drop-shadow-xl p-3 items-center justify-between rounded-md mt-2">
+        <div class="task cursor-pointer flex bg-white drop-shadow-xl p-3 items-center justify-between rounded-md mt-2">
             <div class = "completed flex items-center gap-1">
                 <ion-icon name="ellipse-outline" class="text-2xl task-status cursor-pointer completed"></ion-icon>
                 <h3 class="text-2xl task-name select-none">Task Name</h3>
