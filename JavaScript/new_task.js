@@ -120,4 +120,6 @@ export{
     createTask,
     prioritySelect,
     taskList,
+    taskName,
+    taskDate
 }

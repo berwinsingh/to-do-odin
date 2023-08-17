@@ -1,4 +1,4 @@
-import { taskList, prioritySelect } from "./new_task.js";
+import { taskList, prioritySelect,taskName, taskDate } from "./new_task.js";
 
 const editTaskPopup = document.getElementById("edit-task");
 const mainEditHeading = document.querySelector('.main-edit-heading');
@@ -11,6 +11,11 @@ const editPopupCloseBtn = document.getElementById("edit-close-btn");
 
 const closeEditPopup = ()=>{
     editTaskPopup.classList.add('display');
+    addDescription.value = "";
 };
 
-export {editButton, editTaskPopup, editPopupCloseBtn,closeEditPopup}
+function populateEditTask(){
+    
+}
+
+export {editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup}
