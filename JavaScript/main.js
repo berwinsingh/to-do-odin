@@ -10,8 +10,7 @@ import {
   taskList
 } from "./new_task.js";
 
-import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup } from "./edit-task.js";
-
+import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup, populateEditTask } from "./edit-task.js";
 
 //Creating new task functionality
 addNewTask.addEventListener("click", onClickPopupView);
@@ -34,10 +33,16 @@ taskList.addEventListener("click",(event)=>{
     event.target.closest('.task').remove();
   }
 
+  //Automatically populates the edit task field
   if(event.target.classList.contains('task')){
     editTaskPopup.classList.remove('display');
+    const chosenTask = event.target.closest('.task'); //Determines the close task container to populate edit fields
+    populateEditTask(chosenTask);
   }
 });
 
 //Editing existing task functionality
 editPopupCloseBtn.addEventListener('click',closeEditPopup);
+// editButton.addEventListener('click',()=>{
+
+// })

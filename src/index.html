@@ -78,7 +78,7 @@
     </div>
 
     <!-- This popup comes into play whenever we would like to edit our task details -->
-    <div id="edit-task" class="fixed z-30 bg-white drop-shadow-lg w-100 h-100 p-8 flex flex-col">
+    <div id="edit-task" class="fixed display z-30 bg-white drop-shadow-lg w-100 h-100 p-8 flex flex-col">
         <span class="material-icons absolute" id="edit-close-btn">close</span>
         <h2 class="text-4xl self-center select-none main-edit-heading text-yellow-400">Add New Task</h2>
         <label for="edit-task-name" class="font-semibold mt-3">Task Name</label>
@@ -86,9 +86,9 @@
         <!-- Priority will be dynamically selected based on the element selected to edit -->
         <div class="other-details flex justify-between mt-4">
             <div id="edit-priority" class="flex gap-1">
-                <p id="low" class="text-white bg-green-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Low</p>
-                <p id="medium" class="text-white bg-orange-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Medium</p>
-                <p id="high" class="text-white bg-red-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">High</p>
+                <p id="edit-low" class="text-white bg-green-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Low</p>
+                <p id="edit-medium" class="text-white bg-orange-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">Medium</p>
+                <p id="edit-high" class="text-white bg-red-600 rounded-lg p-2 drop-shadow-md priority-type select-none cursor-pointer">High</p>
             </div>
             <input type="date" name="due-date" id="edit-task-date" class="cursor-pointer rounded-md drop-shadow-md p-2 focus:outline-none">
         </div>

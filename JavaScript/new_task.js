@@ -1,3 +1,5 @@
+import { editTaskPopup } from "./edit-task.js";
+
 const addNewTask = document.getElementById("new-btn"); //Plus icon that will reveal the popup when clicked
 const newTaskPopup = document.getElementById("add-new-task"); //This will be shown or hidden on the click of the add btn
 const taskName = document.getElementById("task-name");
@@ -17,12 +19,13 @@ const highPriority = document.getElementById("high");
 let currentPriority= lowPriority; //Holds the priority level based on the users choice can be changed dynamically
 
 //Factory function to store new tasks that have been created
-const taskDetails = (task, date="", priority=lowPriority.textContent)=>{
-    return{task, date, priority};
+const taskDetails = (task, date="", priority=lowPriority.textContent, description="")=>{
+    return{task, date, priority, description};
 };
 
 function onClickPopupView(){
     newTaskPopup.classList.remove("display");
+    editTaskPopup.classList.add("display");
 };
 
 function popupClose(){
@@ -119,7 +122,5 @@ export{
     popupClose,
     createTask,
     prioritySelect,
-    taskList,
-    taskName,
-    taskDate
+    taskList
 }
