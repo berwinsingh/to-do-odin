@@ -7,7 +7,9 @@ import {
   createTask,
   prioritySelect,
   choosePriority,
-  taskList
+  taskList,
+  myTasks,
+  newTaskPopup
 } from "./new_task.js";
 
 import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup, populateEditTask } from "./edit-task.js";
@@ -36,7 +38,8 @@ taskList.addEventListener("click",(event)=>{
   //Automatically populates the edit task field
   if(event.target.classList.contains('task')){
     editTaskPopup.classList.remove('display');
-    const chosenTask = event.target.closest('.task'); //Determines the close task container to populate edit fields
+    newTaskPopup.classList.add('display');
+    const chosenTask = event.target.closest('.task');
     populateEditTask(chosenTask);
   }
 });

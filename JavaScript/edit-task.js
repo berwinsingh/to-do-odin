@@ -10,6 +10,7 @@ const editPopupCloseBtn = document.getElementById("edit-close-btn");
 const lowEditPriority = document.getElementById('edit-low');
 const mediumEditPriority = document.getElementById('edit-medium');
 const highEditPriority = document.getElementById('edit-high');
+let newPriority = 'Low';
 
 const closeEditPopup = ()=>{
     editTaskPopup.classList.add('display');
@@ -38,9 +39,20 @@ function populateEditTask(element){
         mediumEditPriority.classList.add('display');
         highEditPriority.classList.add('display');
     }
+
+    newPriority = elementPriority.textContent;
+    // console.log(newPriority);
+    if(!editTaskPopup.classList.contains('display')){
+        // console.log(true);
+        
+    }
 }
 
-//Function below will edit the mail task with the new values
+
+// function changePriority(){
+// }
+
+//Function below will edit the main task with the new values
 function editedContent(){
 
 }

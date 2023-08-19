@@ -9,6 +9,7 @@ const closePopup = document.getElementById("close-btn");
 const mainHeading = document.querySelector(".main-new-heading");
 
 const taskList = document.getElementById("tasks-list");
+let myTasks = [];
 
 //The various priority setup's
 const choosePriority = document.getElementById('choose-priority');
@@ -73,6 +74,7 @@ function createTask(){
 
     else{
         const newTask = taskDetails(taskName.value,taskDate.value,currentPriority.textContent); //Storing all the task details
+        myTasks.push(newTask);
 
         const newTaskCreate = newTaskTemplate.content.cloneNode(true);
         let theTask = newTaskCreate.querySelector(".task");
@@ -111,6 +113,7 @@ function createTask(){
         mediumPriority.classList.remove('display');
         highPriority.classList.remove('display');
     }
+    // console.log(myTasks);
 };
 
 export{
@@ -122,5 +125,7 @@ export{
     popupClose,
     createTask,
     prioritySelect,
-    taskList
+    taskList,
+    myTasks,
+    newTaskPopup
 }
