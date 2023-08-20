@@ -12,7 +12,7 @@ import {
   newTaskPopup
 } from "./new_task.js";
 
-import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup, populateEditTask } from "./edit-task.js";
+import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup, populateEditTask, editPriority, changePriority } from "./edit-task.js";
 
 //Creating new task functionality
 addNewTask.addEventListener("click", onClickPopupView);
@@ -40,12 +40,16 @@ taskList.addEventListener("click",(event)=>{
     editTaskPopup.classList.remove('display');
     newTaskPopup.classList.add('display');
     const chosenTask = event.target.closest('.task');
+    // console.log(chosenTask);
     populateEditTask(chosenTask);
   }
 });
 
 //Editing existing task functionality
 editPopupCloseBtn.addEventListener('click',closeEditPopup);
+
 // editButton.addEventListener('click',()=>{
 
-// })
+// });
+
+editPriority.addEventListener('click',changePriority);

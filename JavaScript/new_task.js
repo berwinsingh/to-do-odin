@@ -7,9 +7,19 @@ const createTaskBtn = document.getElementById("create-task-btn");
 const taskDate = document.getElementById("task-date");
 const closePopup = document.getElementById("close-btn");
 const mainHeading = document.querySelector(".main-new-heading");
+const taskDescription = document.getElementById("task-description");
 
 const taskList = document.getElementById("tasks-list");
-let myTasks = [];
+
+//Primary function of this array is to allow me for better & easier filtering
+let myTasks = [
+    {
+        date:"",
+        description:"",
+        priority: "High",
+        task: "Task Name",
+    }
+];
 
 //The various priority setup's
 const choosePriority = document.getElementById('choose-priority');
@@ -73,14 +83,15 @@ function createTask(){
     }
 
     else{
-        const newTask = taskDetails(taskName.value,taskDate.value,currentPriority.textContent); //Storing all the task details
+        const newTask = taskDetails(taskName.value,taskDate.value,currentPriority.textContent,taskDescription.value); //Storing all the task details
         myTasks.push(newTask);
-
+        
         const newTaskCreate = newTaskTemplate.content.cloneNode(true);
         let theTask = newTaskCreate.querySelector(".task");
         let whatToDoElement = theTask.querySelector('.task-name');
         let priorityTypeElement = theTask.querySelector('.priority-type');
         let dueDateElement = theTask.querySelector('.due-date');
+        let detailedDescription = theTask.querySelector(".description");
 
         if (whatToDoElement) {
             whatToDoElement.textContent = newTask.task;
@@ -102,6 +113,9 @@ function createTask(){
         if (dueDateElement) {
             dueDateElement.value = newTask.date;
         }
+        if(detailedDescription){
+            detailedDescription.textContent=taskDescription.value;
+        }
 
         taskList.appendChild(theTask);
         newTaskPopup.classList.add('display');
@@ -109,6 +123,7 @@ function createTask(){
         //Resetting the input fields value i.e., Task Name and Task Date
         taskName.value="";
         taskDate.value="";
+        taskDescription.value="";
         lowPriority.classList.remove('display');
         mediumPriority.classList.remove('display');
         highPriority.classList.remove('display');
