@@ -1,5 +1,5 @@
 const editTaskPopup = document.getElementById("edit-task");
-const mainEditHeading = document.querySelector('.main-edit-heading');
+const mainEditHeading = document.querySelector(".main-edit-heading");
 const editDescription = document.getElementById("edit-description");
 const editButton = document.getElementById("edit-task-btn");
 const editTaskName = document.getElementById("edit-task-name");
@@ -7,84 +7,95 @@ const editTaskDate = document.getElementById("edit-task-date");
 const editPriority = document.getElementById("edit-priority");
 const editPopupCloseBtn = document.getElementById("edit-close-btn");
 
-const highEditPriority = document.getElementById('edit-high');
-const mediumEditPriority = document.getElementById('edit-medium');
-const lowEditPriority = document.getElementById('edit-low');
+const highEditPriority = document.getElementById("edit-high");
+const mediumEditPriority = document.getElementById("edit-medium");
+const lowEditPriority = document.getElementById("edit-low");
 
-let newPriority = 'Low';
+let newPriority = "";
 
-const closeEditPopup = ()=>{
-    editTaskPopup.classList.add('display');
-    editDescription.value = "";
+const closeEditPopup = () => {
+  editTaskPopup.classList.add("display");
+  editDescription.value = "";
 };
 
-
-function populateEditTask(element){
-    const elementPriority = element.querySelector('.priority-type')
-    
-    editTaskName.value = element.querySelector('.task-name').textContent;
-    editTaskDate.value = element.querySelector('.due-date').value;
+function populateEditTask(element) {
+    editTaskName.value = element.querySelector(".task-name").textContent;
+    editTaskDate.value = element.querySelector(".due-date").value;
     editDescription.value = element.querySelector(".description").textContent;
+    
+    const elementPriority = element.querySelector(".priority-type");
+  //Check the current tasks priority and assigns that within the edit screen
+  if (elementPriority.textContent === "High") {
+    highEditPriority.classList.remove("display");
+    lowEditPriority.classList.add("display");
+    mediumEditPriority.classList.add("display");
+  } else if (elementPriority.textContent === "Medium") {
+    highEditPriority.classList.add("display");
+    lowEditPriority.classList.add("display");
+    mediumEditPriority.classList.remove("display");
+  } else {
+    highEditPriority.classList.add("display");
+    lowEditPriority.classList.remove("display");
+    mediumEditPriority.classList.add("display");
+  }
 
-    //Check the current tasks priority and assigns that within the edit screen
-    if(elementPriority.textContent==='High'){
-        highEditPriority.classList.remove("display");
-        lowEditPriority.classList.add("display");
-        mediumEditPriority.classList.add("display");
-        // editTaskPriority.style.background="#dc2626";
-        // editTaskPriority.textContent="High";
-    }
-    else if(elementPriority.textContent==="Medium"){
-        highEditPriority.classList.add("display");
-        lowEditPriority.classList.add("display");
-        mediumEditPriority.classList.remove("display");
-        // editTaskPriority.style.background='#ea580c';
-        // editTaskPriority.textContent="Medium";
-    }
-    else{
-        highEditPriority.classList.add("display");
-        lowEditPriority.classList.remove("display");
-        mediumEditPriority.classList.add("display");
-        // editTaskPriority.style.background='#16a34a';
-        // editTaskPriority.textContent="Low";
-    }
-
-    newPriority = elementPriority.textContent;
+  newPriority = elementPriority.textContent;
 }
 
+function changePriority(e) {
+    // Allows to expand to showcase all the available priorities
+    if (!editTaskPopup.classList.contains("display")) {
+      let setPriority = e.target.id;
+      switch (setPriority) {
+        case "edit-high":
+          mediumEditPriority.classList.toggle("display");
+          lowEditPriority.classList.toggle("display");
+          newPriority = "High";
+          break;
 
-function changePriority(){ //Allows to expand to showcase all the available priorities
-    if(!editTaskPopup.classList.contains('display')){
+        case "edit-medium":
+          highEditPriority.classList.toggle("display");
+          lowEditPriority.classList.toggle("display");
+          newPriority = "Medium";
+          break;
 
-        switch (newPriority) {
-            case "High":
-                mediumEditPriority.classList.remove("display");
-                lowEditPriority.classList.remove("display");
-                newPriority=highEditPriority;
-                break;
-            case "Medium":
-                highEditPriority.classList.remove("display");
-                lowEditPriority.classList.remove("display");
-                newPriority=mediumEditPriority;
-            break;
-            case "Low":
-                mediumEditPriority.classList.remove("display");
-                highEditPriority.classList.remove("display");
-                newPriority=lowEditPriority;
-                break;
-            default:
-                break;
-        }
+        case "edit-low":
+          mediumEditPriority.classList.toggle("display");
+          highEditPriority.classList.toggle("display");
+          newPriority = "Low";
+          break;
+
+        default:
+          break;
+      }
     }
-}
-
-const assignPriority = ()=>{
-
-}
+  }
 
 //Function below will edit the main task with the new values
-function editedContent(){
+function editedContent(item) {
+    if(editTaskName.value!=""){
+        console.log(editTaskName.value);
 
+    }
+    else{
+        mainEditHeading.textContent="Task name cannot be empty!";
+        mainEditHeading.style.color="red";
+        editTaskName.style.border="1px solid red";
+
+        setTimeout(()=>{
+            mainEditHeading.textContent="Add New Task";
+            mainEditHeading.style.color="#fbbf24";
+        },3000)
+    }
 }
 
-export {editButton, editTaskPopup, editPopupCloseBtn, editPriority, closeEditPopup, populateEditTask, editedContent, changePriority}
+export {
+  editButton,
+  editTaskPopup,
+  editPopupCloseBtn,
+  editPriority,
+  closeEditPopup,
+  populateEditTask,
+  changePriority,
+  editedContent
+};

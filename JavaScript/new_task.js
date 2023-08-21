@@ -12,14 +12,7 @@ const taskDescription = document.getElementById("task-description");
 const taskList = document.getElementById("tasks-list");
 
 //Primary function of this array is to allow me for better & easier filtering
-let myTasks = [
-    {
-        date:"",
-        description:"",
-        priority: "High",
-        task: "Task Name",
-    }
-];
+let myTasks = [];
 
 //The various priority setup's
 const choosePriority = document.getElementById('choose-priority');
@@ -75,11 +68,16 @@ function createTask(){
     if(taskName.value===""){
         mainHeading.textContent="Please add a task name!"
         mainHeading.style.color = 'red';
+        taskName.style.border="1px solid red";
         
         setTimeout(()=>{
             mainHeading.textContent="Add new task"
             mainHeading.style.color = '#fbbf24';
         },3000)
+
+        setTimeout(()=>{
+            taskName.style.border="1px solid black";
+        })
     }
 
     else{
@@ -128,7 +126,6 @@ function createTask(){
         mediumPriority.classList.remove('display');
         highPriority.classList.remove('display');
     }
-    // console.log(myTasks);
 };
 
 export{

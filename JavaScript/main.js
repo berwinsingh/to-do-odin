@@ -1,18 +1,5 @@
-import {
-  createTaskBtn,
-  addNewTask,
-  closePopup,
-  onClickPopupView,
-  popupClose,
-  createTask,
-  prioritySelect,
-  choosePriority,
-  taskList,
-  myTasks,
-  newTaskPopup
-} from "./new_task.js";
-
-import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup, populateEditTask, editPriority, changePriority } from "./edit-task.js";
+import { createTaskBtn, addNewTask,closePopup,onClickPopupView,popupClose,createTask,prioritySelect,choosePriority,taskList,myTasks,newTaskPopup} from "./new_task.js";
+import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup, populateEditTask, editPriority, changePriority, editedContent } from "./edit-task.js";
 
 //Creating new task functionality
 addNewTask.addEventListener("click", onClickPopupView);
@@ -40,7 +27,6 @@ taskList.addEventListener("click",(event)=>{
     editTaskPopup.classList.remove('display');
     newTaskPopup.classList.add('display');
     const chosenTask = event.target.closest('.task');
-    // console.log(chosenTask);
     populateEditTask(chosenTask);
   }
 });
@@ -53,3 +39,5 @@ editPopupCloseBtn.addEventListener('click',closeEditPopup);
 // });
 
 editPriority.addEventListener('click',changePriority);
+
+editButton.addEventListener("click",editedContent);
