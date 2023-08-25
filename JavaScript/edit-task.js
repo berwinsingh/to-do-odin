@@ -77,8 +77,27 @@ function changePriority(e) {
 //Function below will edit the main task with the new values
 function editedContent() {
     if(editTaskName.value!=""){
-        // console.log(taskBeingEdited);
+        taskBeingEdited.querySelector(".task-name").textContent=editTaskName.value;
+
+        let taskEditedPriority = taskBeingEdited.querySelector(".priority-type");
+        taskEditedPriority.textContent = newPriority;
+
+        if(taskEditedPriority.textContent==="Low"){
+          taskEditedPriority.style.backgroundColor = "#16a34a";
+        }
+        else if (taskEditedPriority.textContent==="Medium"){
+          taskEditedPriority.style.backgroundColor = "#ea580c";
+        }
+        else{
+          taskEditedPriority.style.backgroundColor = "#dc2626";
+        }
+
+        taskBeingEdited.querySelector(".description").textContent = editDescription.value;
+        taskBeingEdited.querySelector(".due-date").value = editTaskDate.value;
+
+        editTaskPopup.classList.add("display");
     }
+    
     else{
         mainEditHeading.textContent="Task name cannot be empty!";
         mainEditHeading.style.color="red";
