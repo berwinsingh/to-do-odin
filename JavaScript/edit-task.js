@@ -12,6 +12,7 @@ const mediumEditPriority = document.getElementById("edit-medium");
 const lowEditPriority = document.getElementById("edit-low");
 
 let newPriority = "";
+let taskBeingEdited = "";
 
 const closeEditPopup = () => {
   editTaskPopup.classList.add("display");
@@ -24,23 +25,25 @@ function populateEditTask(element) {
     editDescription.value = element.querySelector(".description").textContent;
     
     const elementPriority = element.querySelector(".priority-type");
-  //Check the current tasks priority and assigns that within the edit screen
-  if (elementPriority.textContent === "High") {
-    highEditPriority.classList.remove("display");
-    lowEditPriority.classList.add("display");
-    mediumEditPriority.classList.add("display");
-  } else if (elementPriority.textContent === "Medium") {
-    highEditPriority.classList.add("display");
-    lowEditPriority.classList.add("display");
-    mediumEditPriority.classList.remove("display");
-  } else {
-    highEditPriority.classList.add("display");
-    lowEditPriority.classList.remove("display");
-    mediumEditPriority.classList.add("display");
-  }
 
-  newPriority = elementPriority.textContent;
-}
+    //Check the current tasks priority and assigns that within the edit screen
+    if (elementPriority.textContent === "High") {
+      highEditPriority.classList.remove("display");
+      lowEditPriority.classList.add("display");
+      mediumEditPriority.classList.add("display");
+    } else if (elementPriority.textContent === "Medium") {
+      highEditPriority.classList.add("display");
+      lowEditPriority.classList.add("display");
+      mediumEditPriority.classList.remove("display");
+    } else {
+      highEditPriority.classList.add("display");
+      lowEditPriority.classList.remove("display");
+      mediumEditPriority.classList.add("display");
+    }
+
+    newPriority = elementPriority.textContent;
+    taskBeingEdited = element;
+  }
 
 function changePriority(e) {
     // Allows to expand to showcase all the available priorities
@@ -72,10 +75,9 @@ function changePriority(e) {
   }
 
 //Function below will edit the main task with the new values
-function editedContent(item) {
+function editedContent() {
     if(editTaskName.value!=""){
-        console.log(editTaskName.value);
-
+        // console.log(taskBeingEdited);
     }
     else{
         mainEditHeading.textContent="Task name cannot be empty!";

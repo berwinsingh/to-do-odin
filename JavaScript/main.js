@@ -28,16 +28,11 @@ taskList.addEventListener("click",(event)=>{
     newTaskPopup.classList.add('display');
     const chosenTask = event.target.closest('.task');
     populateEditTask(chosenTask);
+    // editedContent(chosenTask);
   }
 });
 
 //Editing existing task functionality
 editPopupCloseBtn.addEventListener('click',closeEditPopup);
-
-// editButton.addEventListener('click',()=>{
-
-// });
-
 editPriority.addEventListener('click',changePriority);
-
 editButton.addEventListener("click",editedContent);

@@ -55,7 +55,7 @@ p,label{
 }
 
 #edit-task{
-    left: 35%;
+    left: 38%;
     top: 20%;
     border-radius: 15px;
 }
@@ -103,5 +103,10 @@ option {
     #add-new-task{
         left: 40%;
         top: 40%;
+    }
+
+    #edit-task{
+        left: 40%;
+        top: 30%;
     }
 }
