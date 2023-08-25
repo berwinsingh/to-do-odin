@@ -1,5 +1,7 @@
-import { createTaskBtn, addNewTask,closePopup,onClickPopupView,popupClose,createTask,prioritySelect,choosePriority,taskList,myTasks,newTaskPopup} from "./new_task.js";
+import { createTaskBtn, addNewTask,closePopup,onClickPopupView,popupClose,createTask,prioritySelect,choosePriority,taskList,newTaskPopup} from "./new_task.js";
 import { editButton, editTaskPopup, editPopupCloseBtn, closeEditPopup, populateEditTask, editPriority, changePriority, editedContent } from "./edit-task.js";
+
+const navigateToNotes = document.getElementById("notes-btn");
 
 //Creating new task functionality
 addNewTask.addEventListener("click", onClickPopupView);
@@ -28,11 +30,15 @@ taskList.addEventListener("click",(event)=>{
     newTaskPopup.classList.add('display');
     const chosenTask = event.target.closest('.task');
     populateEditTask(chosenTask);
-    // editedContent(chosenTask);
   }
 });
 
 //Editing existing task functionality
 editPopupCloseBtn.addEventListener('click',closeEditPopup);
 editPriority.addEventListener('click',changePriority);
-editButton.addEventListener("click",editedContent);
+editButton.addEventListener("click",editedContent); //Applies the edits that have been made by us
+
+//Notetaking Page Navigation Functionality
+navigateToNotes.addEventListener("click",()=>{
+  window.location.href="../src/notes.html";
+});

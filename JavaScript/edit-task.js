@@ -97,14 +97,14 @@ function editedContent() {
 
         editTaskPopup.classList.add("display");
     }
-    
+
     else{
         mainEditHeading.textContent="Task name cannot be empty!";
         mainEditHeading.style.color="red";
         editTaskName.style.border="1px solid red";
 
         setTimeout(()=>{
-            mainEditHeading.textContent="Add New Task";
+            mainEditHeading.textContent="Edit Task";
             mainEditHeading.style.color="#fbbf24";
         },3000)
     }

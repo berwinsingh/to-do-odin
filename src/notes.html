@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/Favicon.png" type="image/x-icon">
+    <title>Tasky! - All Notes</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body>
+    <div class=" w-40 float-left justify-between z-40 fixed" id="header">
+        <div class="heading">
+            <h1 class="text-4xl p-4 select-none cursor-pointer text-yellow-400">Tasky!!!</h1>
+        </div>
+        <div class="options flex flex-col w-full justify-evenly">
+            <div id="all-tasks" class="flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-yellow-300">
+                <ion-icon name="checkbox-outline"></ion-icon>
+                <p>All Tasks</p>
+            </div>
+            <div id="high-priority" class="mt-1 pl-4 flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-red-500 active:bg-red-600">
+                <p>!!! High Priority</p>
+            </div>
+            <div id="med-priority" class="mt-1 pl-4 flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-orange-400 active:bg-orange-600">
+                <p>!! Med Priority</p>
+            </div>
+            <div id="low-priority" class="mt-1 pl-4 flex items-center gap-1 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-green-500 active:bg-green-600">
+                <p>! Low Priority</p>
+            </div>
+            <div id="notes-btn" class="flex items-center gap-1 mt-2 p-2 drop-shadow-sm cursor-pointer select-none hover:bg-yellow-300 active:bg-yellow-400 bg-yellow-400">
+                <ion-icon name="pencil-outline"></ion-icon>
+                <p>Notes</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="new-note-btn" class="bg-yellow-400 cursor-pointer fixed px-3 py-3 pb-1 rounded-full drop-shadow-yellow z-50 active:scale-.99 hover:bg-yellow-500">
+        <ion-icon name="add-outline" class="text-3xl text-white"></ion-icon>
+    </div>
+
+    <h2 class="flex items-center text-3xl pt-4 pl-44 select-none">All Notes <ion-icon name="pencil-outline" class="pl-1 select-none"></ion-icon></h2>
+
+    <div id="main-content-container" class="h-full ml-48 mr-5">
+        <div id="all-notes" class="w-full flex gap-5">
+            <!-- All notes will be added using JS and will be duplicated from the new note template -->
+        </div>
+    </div>
+
+    <div id="create-new-note" class="bg-white drop-shadow-lg w-100 h-96 fixed z-50">
+        
+    </div>
+
+    <template id="new-note">
+        <div class="my-note w-48 h-52 rounded-lg mt-4 cursor-pointer">
+            <p class="note-details p-2 pt-3 text-white select-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptate exercitationem reiciendis adipisci voluptatem reprehenderit</p>
+            <ion-icon name="trash-outline" class="delete-note text-xl relative"></ion-icon>
+        </div>
+    </template>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="../JavaScript/notetaking.js"></script>
+</body>
+</html>
