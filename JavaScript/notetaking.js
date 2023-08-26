@@ -1,9 +1,7 @@
-import { createNewNote, showNotePopup } from "./new-note.js";
+import { createNewNote, hidePopup, showNotePopup } from "./new-note.js";
 
 const allTasksBtn = document.getElementById("all-tasks");
 const appHeading = document.querySelector("h1");
-const allNotesContainer = document.getElementById("all-notes"); //Container that will contain all the new notes that are added
-const createNoteBtn = document.getElementById("new-note-btn");
 
 const homePageLink = "../src/index.html";
 
@@ -16,4 +14,10 @@ appHeading.addEventListener("click",()=>{
 })
 
 //Adding new note to the page
+const createNoteBtn = document.getElementById("new-note-btn");
+const closeNewNotePopup = document.getElementById("close-new-note-popup");
+const addNoteToView = document.getElementById("create-note-btn");
+
 createNoteBtn.addEventListener("click", showNotePopup);
+closeNewNotePopup.addEventListener("click", hidePopup);
+addNoteToView.addEventListener("click",createNewNote);

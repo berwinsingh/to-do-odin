@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/Favicon.png" type="image/x-icon">
     <title>Tasky! - All Notes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 <body>
@@ -39,20 +40,22 @@
 
     <h2 class="flex items-center text-3xl pt-4 pl-44 select-none">All Notes <ion-icon name="pencil-outline" class="pl-1 select-none"></ion-icon></h2>
 
-    <div id="main-content-container" class="h-full ml-48 mr-5">
-        <div id="all-notes" class="w-full flex gap-5">
+    <div id="main-content-container" class="h-screen ml-48 mr-5">
+        <div id="all-notes" class="w-full flex flex-wrap gap-5">
             <!-- All notes will be added using JS and will be duplicated from the new note template -->
         </div>
     </div>
 
-    <div id="create-new-note" class="bg-white drop-shadow-lg w-100 h-96 fixed z-50">
-        
+    <div id="create-new-note" class="bg-white display drop-shadow-lg w-100 h-98 fixed z-50 p-7 pb-1 flex flex-col gap-2 items-center">
+        <span class="material-symbols-outlined fixed select-none" id="close-new-note-popup">close</span>
+        <h2 id="new-note-heading" class="text-3xl text-yellow-400">Add New Note!</h2>
+        <textarea name="create-my-note" id="create-note-area" cols="30" rows="10" class="rounded-md border-black border w-full overflow-hidden p-2 focus:outline-none" placeholder="What would you like to take a note of?" required></textarea>
+        <button type="button" id="create-note-btn" class="bg-yellow-400 p-2 rounded-md text-white font-semibold drop-shadow-yellow">Create Note</button>
     </div>
 
     <template id="new-note">
-        <div class="my-note w-48 h-52 rounded-lg mt-4 cursor-pointer">
-            <p class="note-details p-2 pt-3 text-white select-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptate exercitationem reiciendis adipisci voluptatem reprehenderit</p>
-            <ion-icon name="trash-outline" class="delete-note text-xl relative"></ion-icon>
+        <div class="my-note w-48 h-52 rounded-lg mt-4 cursor-pointer overflow-hidden flex flex-col p-1">
+            <p class="note-details p-2 pt-3 text-white select-none flex-grow">Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptate exercitationem reiciendis adipisci voluptatem reprehenderit</p>
         </div>
     </template>
     

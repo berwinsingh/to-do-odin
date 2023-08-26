@@ -10,14 +10,18 @@ createTaskBtn.addEventListener("click", createTask);
 choosePriority.addEventListener("click",prioritySelect);
 
 taskList.addEventListener("click",(event)=>{
+  let closestTaskName = event.target.closest(".task");
+
   if(event.target.classList.contains('completed') && event.target.getAttribute('name') === 'ellipse-outline'){
     event.target.setAttribute('name','checkmark-circle');
     event.target.style.color = 'green';
+    closestTaskName.querySelector("h3").style.textDecoration = "line-through";
   }
 
   else if(event.target.classList.contains('completed') && event.target.getAttribute('name')==='checkmark-circle'){
     event.target.setAttribute('name','ellipse-outline');
     event.target.style.color = 'black';
+    closestTaskName.querySelector("h3").style.textDecoration = "none";
   }
 
   if(event.target.classList.contains('delete-task')){

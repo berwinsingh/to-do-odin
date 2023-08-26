@@ -16,7 +16,6 @@ h1,h2,h3{
 }
 
 p,label{
-    /* font-family: var(--para-font); */
     font-size: 1rem;
 }
 
@@ -102,15 +101,21 @@ option {
     line-height: 1.4;
 }
 
-.delete-note{
-    left: 85%;
-    bottom: 2%;
+.delete-btn{
+    left: 30%;
+    top: 30%;
 }
 
 #create-new-note{
     left: 35%;
     top: 28%;
     border-radius: 10px;
+}
+
+#close-new-note-popup{
+    left: 92%;
+    top: 5%;
+    cursor: pointer;
 }
 
 @media (min-width:1600px){
