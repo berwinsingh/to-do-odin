@@ -1,3 +1,5 @@
+import { editNotePopup } from "./edit-note.js";
+
 const newNotePopup = document.getElementById("create-new-note");
 const newNoteInfo = document.getElementById("create-note-area");
 const newNoteHeading = document.getElementById("new-note-heading");
@@ -36,6 +38,7 @@ const createNewNote = ()=>{
 
 const showNotePopup = ()=>{
     newNotePopup.classList.remove("display");
+    editNotePopup.classList.add("display");
 }
 
 const hidePopup = ()=>{
@@ -45,5 +48,6 @@ const hidePopup = ()=>{
 export{
     createNewNote,
     showNotePopup,
-    hidePopup
+    hidePopup,
+    allNotesContainer
 }

@@ -112,10 +112,16 @@ option {
     border-radius: 10px;
 }
 
-#close-new-note-popup{
+#close-new-note-popup,#close-edit-note-popup{
     left: 92%;
     top: 5%;
     cursor: pointer;
+}
+
+#edit-created-note{
+    left: 35%;
+    top: 28%;
+    z-index: 50;
 }
 
 @media (min-width:1600px){
