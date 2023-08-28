@@ -1,5 +1,5 @@
 import { createNewNote, hidePopup, showNotePopup, allNotesContainer } from "./new-note.js";
-import { closeEditPopup, editNoteBtn, fillEditValues, setEditValues } from "./edit-note.js";
+import { closeEditPopup, deleteNote, editNoteBtn, fillEditValues, setEditValues } from "./edit-note.js";
 
 const allTasksBtn = document.getElementById("all-tasks");
 const appHeading = document.querySelector("h1");
@@ -25,6 +25,7 @@ addNoteToView.addEventListener("click",createNewNote);
 
 //Edit note functionality
 const closeEditPopupIcon = document.getElementById("close-edit-note-popup");
+const deleteNoteBtn = document.getElementById("delete-note");
 
 allNotesContainer.addEventListener("click",(event)=>{
     if(event.target.classList.contains("note-details")){
@@ -35,3 +36,4 @@ allNotesContainer.addEventListener("click",(event)=>{
 
 closeEditPopupIcon.addEventListener("click",closeEditPopup);
 editNoteBtn.addEventListener("click",setEditValues);
+deleteNoteBtn.addEventListener("click",deleteNote);

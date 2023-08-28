@@ -57,7 +57,10 @@
         <span class="material-symbols-outlined fixed select-none" id="close-edit-note-popup">close</span>
         <h2 id="edit-note-heading" class="text-3xl text-yellow-400">Edit Note</h2>
         <textarea name="edit-my-note" id="edit-note-area" cols="30" rows="10" class="rounded-md border-black border w-full overflow-hidden p-2 focus:outline-none" placeholder="What would you like to edit?" required></textarea>
-        <button type="button" id="edit-note-btn" class="bg-yellow-400 p-2 rounded-md text-white font-semibold drop-shadow-yellow">Edit Note</button>
+        <div class="buttons flex justify-between gap-5">
+            <button type="button" id="edit-note-btn" class="bg-yellow-400 p-2 rounded-md text-white font-semibold drop-shadow-yellow">Edit Note</button>
+            <button type="button" id="delete-note" class="bg-red-600 text-white p-2 rounded-md font-semibold drop-shadow-red">Delete Note</button>
+        </div>
     </div>
 
     <template id="new-note">

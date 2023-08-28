@@ -35,10 +35,17 @@ const closeEditPopup = ()=>{
     editNotePopup.classList.add("display");
 }
 
+const deleteNote = ()=>{
+    currentSelection.remove();
+    editNoteTextArea.value="";
+    editNotePopup.classList.add("display");
+}
+
 export{
     fillEditValues,
     closeEditPopup,
     setEditValues,
     editNotePopup,
-    editNoteBtn
+    editNoteBtn,
+    deleteNote
 }
