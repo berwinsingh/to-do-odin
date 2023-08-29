@@ -80,10 +80,11 @@ function createTask(){
         })
     }
 
-    else{
+    else {
         const newTask = taskDetails(taskName.value,taskDate.value,currentPriority.textContent,taskDescription.value); //Storing all the task details
         myTasks.push(newTask);
         
+        const todaysDate = new Date();
         const newTaskCreate = newTaskTemplate.content.cloneNode(true);
         let theTask = newTaskCreate.querySelector(".task");
         let whatToDoElement = theTask.querySelector('.task-name');
@@ -115,16 +116,30 @@ function createTask(){
             detailedDescription.textContent=taskDescription.value;
         }
 
-        taskList.appendChild(theTask);
-        newTaskPopup.classList.add('display');
+        if(dueDateElement.value<todaysDate.getDate() || dueDateElement.value<todaysDate.getFullYear){
+            mainHeading.textContent = "Please enter a valid date";
+            mainHeading.style.color="red";
+            taskDate.value="";
 
-        //Resetting the input fields value i.e., Task Name and Task Date
-        taskName.value="";
-        taskDate.value="";
-        taskDescription.value="";
-        lowPriority.classList.remove('display');
-        mediumPriority.classList.remove('display');
-        highPriority.classList.remove('display');
+            setTimeout(()=>{
+                mainHeading.textContent="Add new task"
+                mainHeading.style.color = '#fbbf24';
+            },3000)
+
+        }
+
+        else{
+            taskList.appendChild(theTask);
+            newTaskPopup.classList.add('display');
+
+            //Resetting the input fields value i.e., Task Name and Task Date
+            taskName.value="";
+            taskDate.value="";
+            taskDescription.value="";
+            lowPriority.classList.remove('display');
+            mediumPriority.classList.remove('display');
+            highPriority.classList.remove('display');
+        }
     }
 };
 
