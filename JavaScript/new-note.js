@@ -31,6 +31,7 @@ const createNewNote = ()=>{
         myNoteFrame.style.backgroundColor = randomBgColor;
     
         allNotesContainer.append(myNoteFrame);
+        // saveNote(myNoteFrame);
         newNoteInfo.value="";
         newNotePopup.classList.add("display");
     }

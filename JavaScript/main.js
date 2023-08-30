@@ -25,7 +25,9 @@ taskList.addEventListener("click",(event)=>{
   }
 
   if(event.target.classList.contains('delete-task')){
-    event.target.closest('.task').remove();
+    const itemToDelete = event.target.closest('.task');
+    itemToDelete.remove();
+    saveToLocalStorage(itemToDelete)
   }
 
   //Automatically populates the edit task field
