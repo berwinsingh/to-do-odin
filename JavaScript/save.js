@@ -17,9 +17,14 @@ const loadNotes = ()=>{
     allNotesContainer.innerHTML = localStorage.getItem("notes");
 }
 
+// const saveDate = ()=>{
+//     localStorage.setItem("date",)
+// }
+
 export{
     saveTaskToStorage,
     loadTasks,
     saveNoteToStorage,
-    loadNotes
+    loadNotes,
+    // saveDate
 }

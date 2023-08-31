@@ -2,8 +2,8 @@ import { mainEditHeading } from "./edit-task.js";
 
 export default function checkDateValidity(item) {
   const currentDate = new Date();
-  const selectedDate = new Date(item); // Assumes item is in "YYYY-MM-DD" format
-  console.log(selectedDate);
+  const selectedDate = new Date(item);
+  // console.log(selectedDate);
   
   if (selectedDate >= currentDate) {
     return true;
@@ -17,5 +17,5 @@ export default function checkDateValidity(item) {
             mainEditHeading.style.color="#fbbf24";
         },3000)
   }
-//   return false;
+  return false;
 }

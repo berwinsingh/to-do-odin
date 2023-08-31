@@ -97,13 +97,12 @@ function editedContent() {
 
         taskBeingEdited.querySelector(".description").textContent = editDescription.value;
         const newDate = editTaskDate.value;
-        // console.log(taskBeingEdited.querySelector(".due-date").value === newDate);
+        // console.log(new Date(newDate));
 
         if (checkDateValidity(newDate)){
           taskBeingEdited.querySelector(".due-date").value = newDate;
           editTaskPopup.classList.add("display");
         }
-
         saveTaskToStorage();
     }
 
