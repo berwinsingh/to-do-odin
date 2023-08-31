@@ -1,3 +1,5 @@
+import { saveNoteToStorage } from "./save.js";
+
 const editNotePopup = document.getElementById("edit-created-note");
 const editNoteTextArea = document.getElementById("edit-note-area");
 const editHeading = document.getElementById("edit-note-heading");
@@ -28,6 +30,7 @@ const setEditValues = ()=>{
         currentSelection.querySelector("p").textContent = editNoteTextArea.value;
         editNotePopup.classList.add("display");
         editNoteTextArea.value="";
+        saveNoteToStorage();
     }
 }
 
@@ -39,6 +42,7 @@ const deleteNote = ()=>{
     currentSelection.remove();
     editNoteTextArea.value="";
     editNotePopup.classList.add("display");
+    saveNoteToStorage();
 }
 
 export{

@@ -1,5 +1,6 @@
 import { createNewNote, hidePopup, showNotePopup, allNotesContainer } from "./new-note.js";
 import { closeEditPopup, deleteNote, editNoteBtn, fillEditValues, setEditValues } from "./edit-note.js";
+import { loadNotes } from "./save.js";
 
 const allTasksBtn = document.getElementById("all-tasks");
 const appHeading = document.querySelector("h1");
@@ -37,3 +38,5 @@ allNotesContainer.addEventListener("click",(event)=>{
 closeEditPopupIcon.addEventListener("click",closeEditPopup);
 editNoteBtn.addEventListener("click",setEditValues);
 deleteNoteBtn.addEventListener("click",deleteNote);
+
+loadNotes();

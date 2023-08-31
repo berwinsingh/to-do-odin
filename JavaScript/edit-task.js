@@ -1,3 +1,5 @@
+import { saveTaskToStorage } from "./save.js";
+
 const editTaskPopup = document.getElementById("edit-task");
 const mainEditHeading = document.querySelector(".main-edit-heading");
 const editDescription = document.getElementById("edit-description");
@@ -96,6 +98,7 @@ function editedContent() {
         taskBeingEdited.querySelector(".due-date").value = editTaskDate.value;
 
         editTaskPopup.classList.add("display");
+        saveTaskToStorage();
     }
 
     else{

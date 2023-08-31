@@ -1,4 +1,5 @@
 import { editTaskPopup } from "./edit-task.js";
+import { saveTaskToStorage } from "./save.js";
 
 const addNewTask = document.getElementById("new-btn"); //Plus icon that will reveal the popup when clicked
 const newTaskPopup = document.getElementById("add-new-task"); //This will be shown or hidden on the click of the add btn
@@ -122,7 +123,7 @@ function createTask() {
       detailedDescription.textContent = taskDescription.value;
     }
     taskList.appendChild(theTask);
-    // saveToLocalStorage(theTask);
+    saveTaskToStorage();
     newTaskPopup.classList.add("display");
 
     //Resetting the input fields value i.e., Task Name and Task Date

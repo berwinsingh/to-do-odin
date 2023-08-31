@@ -1,4 +1,5 @@
 import { editNotePopup } from "./edit-note.js";
+import { saveNoteToStorage } from "./save.js";
 
 const newNotePopup = document.getElementById("create-new-note");
 const newNoteInfo = document.getElementById("create-note-area");
@@ -34,6 +35,7 @@ const createNewNote = ()=>{
         // saveNote(myNoteFrame);
         newNoteInfo.value="";
         newNotePopup.classList.add("display");
+        saveNoteToStorage();
     }
 }
 
