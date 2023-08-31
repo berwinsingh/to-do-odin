@@ -1,3 +1,4 @@
+import checkDateValidity from "./date-check.js";
 import { saveTaskToStorage } from "./save.js";
 
 const editTaskPopup = document.getElementById("edit-task");
@@ -95,9 +96,14 @@ function editedContent() {
         }
 
         taskBeingEdited.querySelector(".description").textContent = editDescription.value;
-        taskBeingEdited.querySelector(".due-date").value = editTaskDate.value;
+        const newDate = editTaskDate.value;
+        // console.log(taskBeingEdited.querySelector(".due-date").value === newDate);
 
-        editTaskPopup.classList.add("display");
+        if (checkDateValidity(newDate)){
+          taskBeingEdited.querySelector(".due-date").value = newDate;
+          editTaskPopup.classList.add("display");
+        }
+
         saveTaskToStorage();
     }
 
@@ -121,5 +127,6 @@ export {
   closeEditPopup,
   populateEditTask,
   changePriority,
-  editedContent
+  editedContent,
+  mainEditHeading
 };

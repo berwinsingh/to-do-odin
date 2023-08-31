@@ -1,3 +1,4 @@
+import checkDateValidity from "./date-check.js";
 import { editTaskPopup } from "./edit-task.js";
 import { saveTaskToStorage } from "./save.js";
 
@@ -117,11 +118,14 @@ function createTask() {
       }
     }
     if (dueDateElement) {
-      dueDateElement.value = newTask.date;
+      // if(checkDateValidity(dueDateElement.value)){
+        dueDateElement.value = newTask.date;
+      // }
     }
     if (detailedDescription) {
       detailedDescription.textContent = taskDescription.value;
     }
+
     taskList.appendChild(theTask);
     saveTaskToStorage();
     newTaskPopup.classList.add("display");
@@ -146,6 +150,5 @@ export {
   createTask,
   prioritySelect,
   taskList,
-  myTasks,
   newTaskPopup,
 };

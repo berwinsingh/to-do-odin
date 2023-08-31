@@ -6,7 +6,7 @@ const saveTaskToStorage = ()=>{
 }
 
 const loadTasks = ()=>{
-   taskList.innerHTML = localStorage.getItem("task");
+   taskList.innerHTML = localStorage.getItem("task", taskList.innerHTML);
 }
 
 const saveNoteToStorage = ()=>{
